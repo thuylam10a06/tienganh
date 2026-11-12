@@ -27,8 +27,8 @@ button{font:inherit;cursor:pointer}.deck{height:100%;width:100%;position:relativ
 @media(max-width:760px){.topbar{padding:0 16px}.stage{inset:58px 0 58px}.slide{padding:8% 7%}.cover-art{opacity:.28;right:-4%;top:23%;width:65%}.cover .title{position:relative;z-index:2;font-size:clamp(44px,12vw,70px)}.cover .subtitle{position:relative;z-index:2;max-width:90%}.split{display:flex!important;flex-direction:column;justify-content:center;gap:20px;align-items:stretch}.visual{height:25vh;min-height:150px}.visual .emoji{font-size:90px}.split .title{font-size:42px}.body{font-size:14px;margin-top:12px}.cards{grid-template-columns:1fr;gap:9px;margin-top:18px}.info-card{min-height:auto;padding:13px 15px;display:grid;grid-template-columns:38px 1fr;column-gap:12px}.card-icon{grid-row:span 2;margin:0}.info-card h3{font-size:15px}.info-card p{font-size:12px}.timeline{grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}.timeline:before{display:none}.time-item{padding:0 0 0 26px}.time-dot{top:4px}.time-year{font-size:19px}.time-item p{font-size:12px;margin:5px 0}.hint{display:none}.tool{padding:7px 9px}.brand{font-size:10px}.footer{padding:0 14px}.progress-wrap{max-width:180px}}
 @media(prefers-reduced-motion:reduce){.slide{animation:none}}
 
-/* FIX: keep inactive slides hidden; .split must not override slide visibility */
-.slide:not(.active){display:none!important}
+/* Robust slide visibility: hidden slides must never render */
+.slide[hidden]{display:none!important}
 .slide.active:not(.split){display:flex!important}
 .slide.active.split{display:grid!important}
 </style>
@@ -79,7 +79,7 @@ button{font:inherit;cursor:pointer}.deck{height:100%;width:100%;position:relativ
 </div>
 <script>
 const slides=[...document.querySelectorAll('.slide')];let current=0;const fill=document.getElementById('fill'),count=document.getElementById('count'),notes=document.getElementById('notes'),noteText=document.getElementById('noteText');
-function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));fill.style.width=((current+1)/slides.length*100)+'%';count.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');noteText.textContent=slides[current].dataset.note;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1;}
+function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>{const active=i===current;s.hidden=!active;s.classList.toggle('active',active)});fill.style.width=((current+1)/slides.length*100)+'%';count.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');noteText.textContent=slides[current].dataset.note;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1;}
 document.getElementById('prev').addEventListener('click',()=>show(current-1));document.getElementById('next').addEventListener('click',()=>show(current+1));
 document.addEventListener('keydown',e=>{if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();show(current+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key==='Escape')notes.classList.remove('show')});
 document.getElementById('notesBtn').addEventListener('click',()=>notes.classList.toggle('show'));
