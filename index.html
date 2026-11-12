@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff8dc">
+<title>Thuỳ Lâm's little world</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#344052;--cream:#fffaf0;--yellow:#ffe58a;--pink:#ffd5e5;--blue:#ccecff;--green:#d9f4c7;--purple:#e8dcff;--orange:#ffc99e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Nunito, sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(#f4c96b 1px,transparent 1px);background-size:22px 22px;z-index:-1}
+a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px}.logo{font:800 1.35rem 'Baloo 2';color:#e58b54}.logo span{color:#76a86a}nav .links{display:flex;gap:20px;flex-wrap:wrap;font-weight:800;font-size:.92rem}nav .links a:hover{color:#e58b54}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:30px;padding:48px 0 66px}.eyebrow{display:inline-block;background:var(--green);padding:8px 15px;border-radius:30px;font-weight:900;font-size:.82rem;letter-spacing:.04em}.hero h1{font:800 clamp(3rem,7vw,5.8rem)/.98 'Baloo 2';margin:18px 0 12px;letter-spacing:-2px}.hero h1 span{color:#e58b54}.hero p{font-size:1.08rem;line-height:1.8;max-width:540px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{padding:12px 20px;border-radius:18px;font-weight:900;box-shadow:0 5px 0 #00000012;transition:.2s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--yellow)}.secondary{background:var(--pink)}
+.art{min-height:330px;border-radius:45% 55% 42% 58%/48% 42% 58% 52%;background:linear-gradient(145deg,#ffe89c,#ffd7e7);display:grid;place-items:center;position:relative;transform:rotate(2deg);box-shadow:inset 0 0 0 12px #ffffff66}.pet{font-size:clamp(5rem,13vw,9rem);filter:drop-shadow(0 10px 0 #d88b6b30);transform:rotate(-2deg)}.float{position:absolute;font-size:2rem;animation:bob 3s ease-in-out infinite}.f1{top:12%;left:14%}.f2{right:12%;top:25%;animation-delay:.7s}.f3{bottom:13%;left:18%;animation-delay:1.2s}@keyframes bob{50%{transform:translateY(-12px) rotate(8deg)}}
+section{padding:44px 0}.section-head{text-align:center;margin-bottom:25px}.section-head small{font-weight:900;color:#d58a55;letter-spacing:.12em;text-transform:uppercase}.section-head h2{font:800 clamp(2rem,4vw,3rem) 'Baloo 2';margin:5px 0}.section-head p{margin:0;color:#718091}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:24px;border-radius:26px;box-shadow:0 8px 24px #3440520d;border:2px solid #fff;background:#fff}.card .emoji{font-size:2.3rem}.card h3{font:800 1.35rem 'Baloo 2';margin:8px 0 4px}.card p{line-height:1.7;margin:0;color:#647184}.c-yellow{background:#fff4c9}.c-pink{background:#ffe5ee}.c-blue{background:#e1f3ff}.c-green{background:#e7f6dc}.c-purple{background:#eee7ff}
+.animal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.animal{border-radius:24px;padding:18px 10px;text-align:center;background:white;border:2px solid #fff;box-shadow:0 8px 24px #3440520b}.animal b{display:block;font:800 1.05rem 'Baloo 2';margin-top:5px}.animal span{font-size:2.8rem}
+.music{display:grid;grid-template-columns:1fr 1fr;gap:18px}.track{background:white;border-radius:26px;padding:20px;border:2px solid #fff;box-shadow:0 8px 24px #3440520b}.track h3{font:800 1.25rem 'Baloo 2';margin:0 0 4px}.track p{margin:0 0 12px;color:#718091}.track iframe{width:100%;height:152px;border:0;border-radius:14px}.track .listen{display:inline-block;margin-top:10px;font-weight:900;color:#d77c50}
+.note{background:#fff0c7;border-radius:28px;padding:25px;text-align:center;line-height:1.8}.note strong{font:800 1.4rem 'Baloo 2'}
+.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.social{padding:12px 18px;background:white;border-radius:16px;font-weight:900;box-shadow:0 5px 0 #0000000c}.social:hover{background:var(--yellow)}
+footer{text-align:center;padding:35px 0 45px;color:#8a94a2;font-weight:800;font-size:.9rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:30px}.art{min-height:260px;max-width:460px;width:100%;margin:auto}.grid{grid-template-columns:1fr}.animal-row{grid-template-columns:repeat(2,1fr)}.music{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.hero h1{font-size:3.7rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">thuỳ lâm <span>✿</span></a><div class="links"><a href="#about">about</a><a href="#little-things">little things</a><a href="#music">music</a><a href="#connect">connect</a></div></nav>
+<main>
+<div class="hero">
+<div><span class="eyebrow">✦ welcome to my little corner ✦</span><h1>Hi, I'm<br><span>Thuỳ Lâm!</span></h1><p>Một góc nhỏ trên internet để lưu lại vài điều mình thích, những điều dễ thương và một chút màu sắc của tuổi học trò. Cứ tự nhiên khám phá nha!</p><div class="buttons"><a class="btn primary" href="#about">Khám phá thôi →</a><a class="btn secondary" href="#music">Play some music ♫</a></div></div>
+<div class="art" aria-label="Minh hoạ mèo và chó dễ thương"><span class="float f1">✦</span><span class="float f2">♡</span><span class="float f3">☁</span><div class="pet">🐱 🐶</div></div>
+</div>
+<section id="about"><div class="section-head"><small>a little introduction</small><h2>About this human 🌷</h2><p>Không cần quá nhiều thông tin, chỉ cần một chút để làm quen.</p></div><div class="grid">
+<article class="card c-yellow"><div class="emoji">🎨</div><h3>My kind of vibe</h3><p>Thích những thứ nhiều màu sắc, xinh xắn, có chút tinh nghịch và luôn có cá tính riêng.</p></article>
+<article class="card c-pink"><div class="emoji">🎧</div><h3>On repeat</h3><p>Âm nhạc là chiếc mood booster (thứ giúp tâm trạng tốt hơn) của mình. Soobin luôn có một góc riêng trong playlist.</p></article>
+<article class="card c-blue"><div class="emoji">🌱</div><h3>Currently</h3><p>Đang học hỏi, thử những điều mới và gom góp từng trải nghiệm nhỏ trên hành trình lớn lên.</p></article>
+</div></section>
+<section id="little-things"><div class="section-head"><small>tiny favorites</small><h2>Things that make me happy</h2><p>Mấy điều nhỏ xíu nhưng có thể làm một ngày vui hơn.</p></div><div class="animal-row">
+<div class="animal"><span>🐈</span><b>Cats</b></div><div class="animal"><span>🐕</span><b>Dogs</b></div><div class="animal"><span>🎹</span><b>Music</b></div><div class="animal"><span>🌈</span><b>Colorful stuff</b></div>
+</div></section>
+<section id="music"><div class="section-head"><small>now playing</small><h2>A little music corner 🎵</h2><p>Một chút nhạc để chill. Nhấn play để nghe trên Spotify nha.</p></div><div class="music">
+<div class="track"><h3>Phía Sau Một Cô Gái</h3><p>Soobin Hoàng Sơn</p><iframe src="https://open.spotify.com/embed/track/4BdB08vuS9r4HOoY7GkAxT?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+<div class="track"><h3>Nếu Ngày Ấy</h3><p>Soobin Hoàng Sơn</p><div class="note"><strong>♫ A song for the mood</strong><p>Nghe bài hát này trên Spotify nhé!</p><a class="listen" href="https://open.spotify.com/search/Soobin%20N%E1%BA%BFu%20Ng%C3%A0y%20%E1%BA%A4y" target="_blank" rel="noopener">Tìm bài hát trên Spotify ↗</a></div></div>
+</div></section>
+<section id="connect"><div class="section-head"><small>say hello</small><h2>Find me around ♡</h2><p>Các góc mạng xã hội của mình sẽ được cập nhật ở đây.</p></div><div class="socials"><span class="social">◎ Instagram · coming soon</span><span class="social">f Facebook · coming soon</span><span class="social">♪ TikTok · coming soon</span></div></section>
+<div class="note"><strong>“Aww, you found my little world!”</strong><br>Cảm ơn vì đã ghé qua. Chúc bạn có một ngày thật dịu dàng nhé ✿</div>
+</main>
+<footer>made with ♡ by Thuỳ Lâm · 2026</footer>
+</div>
+</body>
+</html>
